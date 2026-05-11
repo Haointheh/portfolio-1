@@ -1,6 +1,7 @@
 html {
     scroll-behavior: smooth;
 }
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,6 +9,7 @@ body {
     background-color: #f4f4f4;
     color: #333;
 }
+
 header {
     background-color: #333;
     color: white;
@@ -26,8 +28,9 @@ nav a {
 }
 section {
     padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
 }
 .home {
     background-color: #fff;
@@ -35,9 +38,9 @@ section {
 }
 .about, .skills, .projects, .education, .achievements, .contact {
     background-color: #fff;
-    margin: 1rem 0;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
 }
 h2 {
     color: #333;
@@ -48,6 +51,89 @@ ul {
 }
 li {
     margin: 0.5rem 0;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.skill-category {
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-left: 4px solid #333;
+    border-radius: 4px;
+}
+
+.skill-category h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.skill-category ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.skill-category li {
+    margin: 0.7rem 0;
+}
+
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.project-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    flex: 1 1 calc(33.333% - 1rem);
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: #222;
+    font-size: 1.2rem;
+}
+
+.project-tech {
+    font-style: italic;
+    color: #555;
+    margin: 0.5rem 0 1rem;
+}
+
+.project-card p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.project-card a {
+    align-self: flex-start;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #333;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.project-card a:hover {
+    background-color: #333;
+    color: #fff;
 }
 .contact form {
     display: flex;
@@ -69,4 +155,28 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section {
+        padding: 1.5rem;
+    }
+    nav a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 1rem;
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
+    }
 }
