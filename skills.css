@@ -1,0 +1,35 @@
+.skills {
+    background-color: #fff;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.skill-category {
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-left: 4px solid #333;
+    border-radius: 4px;
+}
+
+.skill-category h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.skill-category ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.skill-category li {
+    margin: 0.7rem 0;
+}

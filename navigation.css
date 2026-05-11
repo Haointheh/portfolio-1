@@ -1,0 +1,33 @@
+nav {
+    background-color: #444;
+    padding: 0.5rem;
+    text-align: center;
+}
+nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+nav a.nav-icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+nav a.github::before {
+    margin-right: 0.4rem;
+}
+
+nav a.resume {
+    background-color: #555;
+    padding: 0.35rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+nav a.resume:hover {
+    background-color: #666;
+}

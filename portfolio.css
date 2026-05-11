@@ -26,8 +26,33 @@ nav a {
     margin: 0 1rem;
     text-decoration: none;
 }
+
+nav a.nav-icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+nav a.github::before {
+    margin-right: 0.4rem;
+}
+
+
+nav a.resume {
+    background-color: #555;
+    padding: 0.35rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+nav a.resume:hover {
+    background-color: #666;
+}
+
 section {
-    padding: 2rem;
+    padding: 2rem 100px;
     width: 100%;
     box-sizing: border-box;
     margin: 0;
@@ -157,10 +182,9 @@ footer {
     padding: 1rem;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     section {
-        padding: 1.5rem;
+        padding: 1.5rem 2rem;
     }
     nav a {
         margin: 0 0.5rem;
@@ -170,7 +194,7 @@ footer {
 
 @media (max-width: 480px) {
     section {
-        padding: 1rem;
+        padding: 1rem 1rem;
     }
     header h1 {
         font-size: 1.5rem;
