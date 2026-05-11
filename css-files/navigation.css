@@ -1,15 +1,15 @@
-nav {
+.navigation {
     background-color: #444;
     padding: 0.5rem;
     text-align: center;
 }
-nav a {
+.navigation a {
     color: white;
     margin: 0 1rem;
     text-decoration: none;
 }
 
-nav a.nav-icon {
+.navigation a.nav-icon {
     display: inline-flex;
     align-items: center;
     padding: 0.35rem 0.6rem;
@@ -17,17 +17,24 @@ nav a.nav-icon {
     border-radius: 4px;
 }
 
-nav a.github::before {
+.navigation a.github::before {
     margin-right: 0.4rem;
 }
 
-nav a.resume {
+.navigation a.resume {
     background-color: #555;
     padding: 0.35rem 0.6rem;
     border-radius: 4px;
     font-size: 0.9rem;
 }
 
-nav a.resume:hover {
+.navigation a.resume:hover {
     background-color: #666;
+}
+
+@media (max-width: 480px) {
+    .navigation a {
+        display: block;
+        margin: 0.5rem 0;
+    }
 }
