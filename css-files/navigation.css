@@ -1,15 +1,29 @@
 .navigation {
-    background-color: #444;
-    padding: 0.5rem;
-    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../assests/Steven Universe _The Answer_.gif") center/cover no-repeat fixed;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px 100px 10px 100px;
 }
-.navigation a {
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: rem;
+}
+
+.nav-left a,
+.nav-right a {
     color: white;
-    margin: 0 1rem;
+    margin: 0 0.5rem;
     text-decoration: none;
 }
 
-.navigation a.nav-icon {
+.nav-right a.nav-icon {
     display: inline-flex;
     align-items: center;
     padding: 0.35rem 0.6rem;
@@ -17,24 +31,37 @@
     border-radius: 4px;
 }
 
-.navigation a.github::before {
+.nav-right a.github::before {
     margin-right: 0.4rem;
 }
 
-.navigation a.resume {
+.nav-right a.resume {
     background-color: #555;
     padding: 0.35rem 0.6rem;
     border-radius: 4px;
     font-size: 0.9rem;
 }
 
-.navigation a.resume:hover {
+.nav-right a.resume:hover {
     background-color: #666;
 }
 
+@media (max-width: 768px) {
+    .navigation {
+        padding: 0.5rem;
+    }
+}
+
 @media (max-width: 480px) {
-    .navigation a {
+    .nav-left,
+    .nav-right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-left a,
+    .nav-right a {
         display: block;
-        margin: 0.5rem 0;
+        margin: 0.4rem 0;
     }
 }

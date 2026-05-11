@@ -25,7 +25,7 @@ body {
 }
 
 .skills, .projects, .education, .achievements, .contact, .about, .home {
-    background-color: #fff;
+    background-color: transparent;
     margin: 0;
     border-radius: 0;
     box-shadow: none;
