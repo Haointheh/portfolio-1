@@ -1,0 +1,119 @@
+:root{
+    --bg: #0b0f14;
+    --panel: #0f1720;
+    --muted: #97a0a8;
+    --text: #e6eef6;
+    --accent: #7dd3fc;
+    --card-border: rgba(125,211,252,0.08);
+}
+
+/* Base */
+html,body{
+    height:100%;
+}
+body{
+    background-color:var(--bg);
+    color:var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+/* Sections */
+.section{
+    background: transparent;
+    padding: 3rem 1.25rem;
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.section-title{
+    color:var(--text);
+    font-size:1.7rem;
+    letter-spacing:0.4px;
+    margin-bottom:1rem;
+}
+
+/* Navigation */
+.navigation{
+    background: rgba(10,14,18,0.45);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    padding:0.75rem 1.5rem;
+    color:var(--text);
+    position:sticky;
+    top:0;
+    z-index:20;
+}
+.navigation a{color:var(--text);}
+.nav-right .nav-icon.resume{border:1px solid rgba(255,255,255,0.06);padding:0.4rem 0.6rem;border-radius:6px}
+
+/* Hero: keep overlay but ensure text contrast */
+.home p{color:var(--text);max-width:900px;margin:0 auto}
+.home .section-title{color:var(--text)}
+
+/* Projects cards */
+.projects{background:transparent;padding-bottom:2rem}
+.project-cards{gap:1.25rem}
+.project-card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid var(--card-border);
+    border-radius:12px;
+    padding:1.4rem;
+    box-shadow: 0 6px 18px rgba(2,6,12,0.6), 0 1px 0 rgba(125,211,252,0.03) inset;
+    color:var(--text);
+    transition: transform 0.22s cubic-bezier(.2,.9,.3,1), box-shadow 0.22s;
+}
+.project-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.6), 0 6px 20px rgba(125,211,252,0.06)}
+
+.project-card h3{color:var(--text);font-size:1.15rem}
+.project-tech{color:var(--muted);margin-top:0.35rem}
+.project-card p{color:var(--muted)}
+
+.project-card a{
+    display:inline-block;
+    margin-top:0.6rem;
+    color:var(--accent);
+    text-decoration:none;
+    border:1px solid rgba(125,211,252,0.16);
+    padding:0.45rem 0.8rem;
+    border-radius:8px;
+    background:transparent;
+}
+.project-card a:hover{background:var(--accent);color:#022029}
+
+/* Forms */
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea{
+    width:100%;
+    background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.04);
+    color:var(--text);
+    padding:0.8rem;
+    border-radius:8px;
+    margin-bottom:0.75rem;
+}
+.contact button{background:var(--accent);border:none;color:#022029;padding:0.6rem 1rem;border-radius:8px;cursor:pointer}
+
+/* Footer */
+footer{color:var(--muted);text-align:center;padding:2rem 1rem;background:transparent}
+
+/* Reveal animation */
+.animate-reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: var(--delay, 0ms);
+}
+.animate-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive tweaks */
+@media (max-width:900px){
+    .project-card{flex:1 1 100%;}
+}

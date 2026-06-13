@@ -1,11 +1,11 @@
 .navigation {
     background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../assests/Steven Universe _The Answer_.gif") center/cover no-repeat fixed;
-    padding: 0.5rem 1rem;
+    padding: 10px 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 10px 100px 10px 100px;
+    box-sizing: border-box;
 }
 
 .nav-left,
@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: rem;
+    gap: 1rem;
 }
 
 .nav-left a,
@@ -29,26 +29,38 @@
     padding: 0.35rem 0.6rem;
     border: 1px solid transparent;
     border-radius: 4px;
+    color: white;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
 }
 
-.nav-right a.github::before {
+.nav-right a.nav-icon:hover {
+    background-color: rgba(255,255,255,0.08);
+    transform: translateY(-1px);
+}
+
+.nav-right a.github::before,
+.nav-right a.linkedin::before {
     margin-right: 0.4rem;
 }
 
 .nav-right a.resume {
-    background-color: #555;
+    background-color: rgba(125,211,252,0.12);
     padding: 0.35rem 0.6rem;
     border-radius: 4px;
     font-size: 0.9rem;
+    border: 1px solid rgba(125,211,252,0.35);
+    color: var(--accent, #7dd3fc);
 }
 
 .nav-right a.resume:hover {
-    background-color: #666;
+    background-color: var(--accent, #7dd3fc);
+    color: #022029;
+    border-color: transparent;
 }
 
 @media (max-width: 768px) {
     .navigation {
-        padding: 0.5rem;
+        padding: 0.6rem 1rem;
     }
 }
 
@@ -64,4 +76,49 @@
         display: block;
         margin: 0.4rem 0;
     }
+}
+
+/* Mobile toggle button */
+.nav-toggle{
+    display:none;
+    background:transparent;
+    border:0;
+    padding:0.4rem;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+.nav-toggle .hamburger{
+    display:block;
+    width:22px;
+    height:2px;
+    background: #fff;
+    position:relative;
+}
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after{
+    content:'';
+    position:absolute;
+    left:0;
+    width:22px;
+    height:2px;
+    background:#fff;
+}
+.nav-toggle .hamburger::before{top:-7px}
+.nav-toggle .hamburger::after{top:7px}
+
+@media (max-width: 768px){
+    .nav-toggle{display:flex}
+    .nav-left, .nav-right{display:none;width:100%}
+    .navigation.open .nav-left,
+    .navigation.open .nav-right{
+        display:flex;
+        flex-direction:column;
+        gap:0.5rem;
+        align-items:center;
+        padding:0.75rem 0 1rem 0;
+        width:100%;
+        background: rgba(0,0,0,0.14);
+    }
+    .navigation.open{box-shadow:0 8px 30px rgba(0,0,0,0.5)}
 }

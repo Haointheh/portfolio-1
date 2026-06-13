@@ -1,5 +1,10 @@
 .home {
-    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../assests/Steven Universe _The Answer_.gif") center/cover no-repeat fixed;
+    background-color: #000;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../assests/bg2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     text-align: center;
     min-height: 80vh;
     display: flex;
@@ -16,5 +21,17 @@
 
 .home-title{
     color: #fff;
+}
+
+/* Subtle entrance animation for hero text */
+.home .section-title,
+.home p {
+    animation: fadeUp 900ms ease both;
+}
+.home p { animation-delay: 150ms; }
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
 }
 

@@ -18,10 +18,11 @@ body {
 }
 
 .section {
-    padding: 2rem 100px;
+    padding: 2rem 2rem;
+    max-width: 1200px;
     width: 100%;
     box-sizing: border-box;
-    margin: 0;
+    margin: 0 auto;
 }
 
 .skills, .projects, .education, .achievements, .contact, .about, .home {
@@ -46,7 +47,7 @@ li {
 
 @media (max-width: 768px) {
     .section {
-        padding: 1.5rem 2rem;
+        padding: 1.5rem 1.5rem;
     }
 }
 

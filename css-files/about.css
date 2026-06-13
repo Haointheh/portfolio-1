@@ -4,3 +4,13 @@
     border-radius: 0;
     box-shadow: none;
 }
+
+.about a[href*="github.com"] {
+    color: var(--accent, #7dd3fc);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.about a[href*="github.com"]:hover {
+    color: #a5f3fc;
+}

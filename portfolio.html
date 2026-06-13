@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css-files/education.css">
     <link rel="stylesheet" href="css-files/contact.css">
     <link rel="stylesheet" href="css-files/footer.css">
+    <link rel="stylesheet" href="css-files/dark-theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -20,14 +21,17 @@
         <h1>Shradha Rai</h1>
         <p>Web Development Enthusiast</p>
     </header> -->
-    <nav class="navigation">
+    <nav id="site-nav" class="navigation">
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="hamburger"></span>
+        </button>
         <div class="nav-left">
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#education">Education</a>
-            <a href="#achievements">Achievements</a>
+            <!-- <a href="#achievements">Achievements</a> -->
             <a href="#contact">Contact</a>
         </div>
         <div class="nav-right">
@@ -44,7 +48,13 @@
 
     <section id="about" class="section about">
         <h2 class="section-title">About Me</h2>
-        <p>I am interested in web development and am currently reading Software Engineering from Nepal College of Information Technology. I completed my +2 from NIST College. My GitHub account: <a href="https://github.com/Haointheh" target="_blank">Haointheh</a>.</p>
+        <p>Hi, I'm Shradha, a Software Developer with a strong interest in frontend development. I enjoy creating responsive, user-friendly web applications using React, JavaScript, HTML, and CSS. I also have basic knowledge of backend development with FastAPI, Python, and databases.
+
+I like turning ideas into simple, interactive, and visually appealing websites while learning new technologies and improving my skills. I'm always looking for opportunities to build projects that help me grow as a developer.
+
+When I'm not coding, I'm exploring new tools, learning modern web technologies, and working on personal projects to strengthen my frontend development skills.</p>
+        <p>I am interested in web development and am currently reading Software Engineering from Nepal College of Information Technology. I completed my +2 from NIST College. </p>
+        <p> Please feel free to check my project and my github account. <a href="https://github.com/Haointheh" target="_blank">Haointheh</a></p>
     </section>
 
     <section id="skills" class="section skills">
@@ -87,19 +97,19 @@
                 <h3>PPE Detection System using YOLO v8</h3>
                 <p class="project-tech">YOLOv8, FastAPI, React</p>
                 <p>Built a real-time PPE detection system using YOLOv8 to identify helmet and vest compliance from images and webcam feeds. Developed a FastAPI backend with authentication and logging, and a React frontend with live detection, alerts, and dashboard for monitoring violations.</p>
-                <a href="https://github.com/Haointheh/minor-project-1" target="_blank">View Project</a>
+                <a href="https://github.com/Haointheh/minor-project-1" target="_blank">View code</a>
             </div>
             <div class="project-card">
                 <h3>Anime Recommendation System</h3>
                 <p class="project-tech">Python, Streamlit, Colab</p>
                 <p>Built a content-based recommendation system using similarity algorithms to suggest anime based on user preferences. Developed an interactive Streamlit interface with filtering and ranking features for personalized recommendations.</p>
-                <a href="https://github.com/Haointheh/anime-recommendation-system" target="_blank">View Project</a>
+                <a href="https://github.com/Haointheh/anime-recommendation-system" target="_blank">View code</a>
             </div>
             <div class="project-card">
                 <h3>PoppinVans Cafe Website</h3>
                 <p class="project-tech">HTML, CSS, PHP, MySQL</p>
                 <p>Built a full-stack dessert café website with PHP and MySQL, featuring user authentication, menu browsing, and online order management with a responsive frontend.</p>
-                <a href="https://github.com/Haointheh/Website-popv" target="_blank">View Project</a>
+                <a href="https://github.com/Haointheh/Website-popv" target="_blank">View Code</a>
             </div>
         </div>
     </section> 
@@ -111,13 +121,13 @@
             <li>+2, NIST College (Completed)</li>
         </ul>
     </section>
-    <section id="achievements" class="section achievements">
+    <!-- <section id="achievements" class="section achievements">
         <h2 class="section-title">Achievements</h2>
         <p>Coming soon...</p>
-    </section>
+    </section> -->
 
 
-    <section id="contact" class="section contact">
+    <!-- <section id="contact" class="section contact">
         <h2 class="section-title">Contact</h2>
         <form action="#" method="post">
             <input type="text" name="name" placeholder="Your Name" required>
@@ -125,10 +135,47 @@
             <textarea name="message" placeholder="Your Message" required></textarea>
             <button type="submit">Send</button>
         </form>
-    </section>
+    </section> -->
 
     <footer>
         <p>&copy; 2023 Shradha Rai. All rights reserved.</p>
     </footer>
+    <script>
+        (function(){
+            const nav = document.getElementById('site-nav');
+            const toggle = document.getElementById('nav-toggle');
+            if(nav && toggle) {
+                toggle.addEventListener('click', function(){
+                    const isOpen = nav.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', isOpen);
+                });
+                window.addEventListener('resize', function(){
+                    if(window.innerWidth > 768) nav.classList.remove('open');
+                });
+            }
+
+            const revealItems = document.querySelectorAll(
+                'section .section-title, section p, section h3, section li, section a, section .project-card, section .skill-category, section form input, section form textarea, section form button'
+            );
+
+            revealItems.forEach((el, index) => {
+                el.classList.add('animate-reveal');
+                el.style.setProperty('--delay', `${index * 40}ms`);
+            });
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15,
+            });
+
+            revealItems.forEach(item => observer.observe(item));
+        })();
+    </script>
 </body>
 </html>
